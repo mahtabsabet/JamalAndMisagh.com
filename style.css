@@ -56,10 +56,17 @@ a { color: inherit; }
   padding: 40vh 0 18vh;
 }
 
+.invite {
+  /* Height of the "twenty" lettering; its width follows the SVG's aspect ratio */
+  --tw-h: clamp(420px, 78vh, 700px);
+  --tw-w: calc(var(--tw-h) * 378 / 1267);
+  --tw-gutter: calc(var(--tw-w) * 0.66 + 12px);
+}
+
 .invite .content {
   position: relative;
   text-align: right;
-  padding-left: 110px;
+  padding-left: var(--tw-gutter);
   text-shadow: 0 0 10px var(--paper), 0 0 3px var(--paper);
 }
 
@@ -81,15 +88,13 @@ a { color: inherit; }
   line-height: 1;
 }
 
-.invite .twenty {
+/* Sits just left of the text so the "y" loop clears the names */
+.invite .twenty-art {
   position: absolute;
-  left: -10px;
-  bottom: 12vh;
-  font-size: clamp(7rem, 22vh, 11rem);
-  transform: rotate(-90deg);
-  transform-origin: left bottom;
-  translate: 0.9em 0;
-  white-space: nowrap;
+  left: calc(var(--tw-gutter) - var(--tw-w) - 6px);
+  bottom: -0.3em;
+  height: var(--tw-h);
+  width: auto;
   pointer-events: none;
 }
 
@@ -260,8 +265,9 @@ footer .twenty.small { font-size: 3.4rem; color: var(--ink); margin-bottom: 0.1e
 
 @media (max-width: 560px) {
   .invite { padding-top: 34vh; }
-  .invite .content { padding-left: 64px; }
-  .invite .twenty { font-size: clamp(5.5rem, 18vh, 8rem); left: -18px; }
+  /* Tall enough that the "y" loop rises above the names, so the lettering can tuck in beside the text */
+  .invite { --tw-h: clamp(540px, 70vh, 620px); --tw-gutter: 100px; }
+  .invite .twenty-art { left: calc(var(--tw-gutter) - var(--tw-w) * 0.64 - 4px); }
   .names { font-size: 1.5rem; letter-spacing: 0.12em; margin-right: -0.12em; white-space: nowrap; }
   .script-line { font-size: 1.1rem; letter-spacing: 0.08em; }
   .dates { font-size: 1.1rem; letter-spacing: 0.1em; }
@@ -270,6 +276,10 @@ footer .twenty.small { font-size: 3.4rem; color: var(--ink); margin-bottom: 0.1e
   .itinerary, .rsvp { padding: 44px 20px; }
   h2 { font-size: 1.6rem; letter-spacing: 0.22em; margin-right: -0.22em; }
   .day ul { font-size: 0.95rem; }
+}
+
+@media (max-width: 380px) {
+  .invite { --tw-gutter: 84px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
