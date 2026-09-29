@@ -82,6 +82,8 @@ a { color: inherit; }
   content: "";
   position: absolute;
   inset: -12% 0;
+  /* Start near the text, not at the far left where the "twenty" lettering sits */
+  left: calc(var(--tw-gutter) - 40px);
   /* Extend past the text on the right, but never past the edge of the screen */
   right: calc(-1 * min(18%, max(16px, 50vw - 326px)));
   z-index: -1;
