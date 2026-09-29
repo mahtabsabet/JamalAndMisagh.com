@@ -1,6 +1,6 @@
 :root {
-  --ink: #3b3d40;
-  --ink-soft: #5d6166;
+  --ink: #2a2c2f;
+  --ink-soft: #464a4f;
   --paper: #f4f4f2;
   --sage: #7f9384;
   --slate: #8e96ab;
@@ -284,7 +284,10 @@ footer .twenty.small { font-size: 3.4rem; color: var(--ink); margin-bottom: 0.1e
   .invite .content::before {
     background: radial-gradient(ellipse 72% 56% at 68% 50%, rgba(244, 244, 242, 0.62) 45%, rgba(244, 244, 242, 0));
   }
-  .invite .twenty-art { left: calc(var(--tw-gutter) - var(--tw-w) * 0.64 - 4px); }
+  /* Pull the text in from the right edge so it has room to breathe; the lettering
+     is positioned from the text, so it moves left with it (plus a little extra) */
+  .invite .content { padding-right: 20px; }
+  .invite .twenty-art { left: calc(var(--tw-gutter) - var(--tw-w) * 0.64 - 8px); }
   .names { font-size: 1.5rem; letter-spacing: 0.12em; margin-right: -0.12em; white-space: nowrap; }
   .script-line { font-size: 1.1rem; letter-spacing: 0.08em; }
   .dates { font-size: 1.1rem; letter-spacing: 0.1em; }
@@ -296,7 +299,9 @@ footer .twenty.small { font-size: 3.4rem; color: var(--ink); margin-bottom: 0.1e
 }
 
 @media (max-width: 380px) {
-  .invite { --tw-gutter: 84px; }
+  /* Narrower gutter so the venue still fits on one line with the right-hand padding */
+  .invite { --tw-gutter: 66px; }
+  .invite .content { padding-right: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
