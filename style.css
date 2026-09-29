@@ -87,7 +87,7 @@ a { color: inherit; }
   /* Extend past the text on the right, but never past the edge of the screen */
   right: calc(-1 * min(18%, max(16px, 50vw - 326px)));
   z-index: -1;
-  background: radial-gradient(closest-side, rgba(244, 244, 242, 0.76) 50%, rgba(244, 244, 242, 0));
+  background: radial-gradient(closest-side, rgba(244, 244, 242, 0.62) 45%, rgba(244, 244, 242, 0));
   pointer-events: none;
 }
 
@@ -282,7 +282,7 @@ footer .twenty.small { font-size: 3.4rem; color: var(--ink); margin-bottom: 0.1e
   /* On phones the right-aligned line ends sit over the dark trees at the screen edge,
      so center the mist further right; the screen edge hides where it's cut off */
   .invite .content::before {
-    background: radial-gradient(ellipse 72% 56% at 68% 50%, rgba(244, 244, 242, 0.8) 55%, rgba(244, 244, 242, 0));
+    background: radial-gradient(ellipse 72% 56% at 68% 50%, rgba(244, 244, 242, 0.62) 45%, rgba(244, 244, 242, 0));
   }
   .invite .twenty-art { left: calc(var(--tw-gutter) - var(--tw-w) * 0.64 - 4px); }
   .names { font-size: 1.5rem; letter-spacing: 0.12em; margin-right: -0.12em; white-space: nowrap; }
