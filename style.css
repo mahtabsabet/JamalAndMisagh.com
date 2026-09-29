@@ -288,20 +288,19 @@ footer .twenty.small { font-size: 3.4rem; color: var(--ink); margin-bottom: 0.1e
      is positioned from the text, so it moves left with it (plus a little extra) */
   .invite .content { padding-right: 20px; }
   .invite .twenty-art { left: calc(var(--tw-gutter) - var(--tw-w) * 0.64 - 8px); }
-  .names { font-size: 1.5rem; letter-spacing: 0.12em; margin-right: -0.12em; white-space: nowrap; }
-  .script-line { font-size: 1.1rem; letter-spacing: 0.08em; }
-  .dates { font-size: 1.1rem; letter-spacing: 0.1em; }
-  .venue { font-size: 0.95rem; letter-spacing: 0.06em; }
-  .blurb, .rsvp-note { font-size: 1rem; letter-spacing: 0.08em; }
+  /* Invite text scales down on narrower phones so the lettering and the text both fit */
+  .names { font-size: min(1.5rem, 6vw); letter-spacing: 0.12em; margin-right: -0.12em; white-space: nowrap; }
+  .script-line { font-size: min(1.1rem, 4.4vw); letter-spacing: 0.08em; }
+  .dates { font-size: min(1.1rem, 4.4vw); letter-spacing: 0.1em; }
+  .venue { font-size: min(0.95rem, 3.8vw); letter-spacing: 0.06em; }
+  .blurb, .rsvp-note { font-size: min(1rem, 4vw); letter-spacing: 0.08em; }
   .itinerary, .rsvp { padding: 44px 20px; }
   h2 { font-size: 1.6rem; letter-spacing: 0.22em; margin-right: -0.22em; }
   .day ul { font-size: 0.95rem; }
 }
 
 @media (max-width: 380px) {
-  /* Narrower gutter so the venue still fits on one line with the right-hand padding */
   .invite { --tw-gutter: 66px; }
-  .invite .content { padding-right: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
