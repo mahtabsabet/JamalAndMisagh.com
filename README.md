@@ -6,6 +6,7 @@ Plain static site (no build step), hosted on GitHub Pages at <https://jamalandmi
 
 - `index.html` — invitation, itinerary, RSVP
 - `style.css` — styles
+- `images/og-preview.jpg` — link-preview thumbnail (WhatsApp, iMessage, etc.)
 - `CNAME` — custom domain for GitHub Pages (don't delete)
 
 ## Local preview
