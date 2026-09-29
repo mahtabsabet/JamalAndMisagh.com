@@ -21,6 +21,10 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  /* The mist behind the invite spills past the right edge on phones; without
+     this the page gets wider than the screen and can be zoomed out off-center */
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .scene {
@@ -67,16 +71,21 @@ a { color: inherit; }
   position: relative;
   text-align: right;
   padding-left: var(--tw-gutter);
-  text-shadow: 0 0 10px var(--paper), 0 0 3px var(--paper);
+  text-shadow: 0 0 2px var(--paper), 0 0 6px var(--paper), 0 0 14px var(--paper);
 }
+
+/* Darker than the other italics: this line sits right over the darkest trees */
+.invite .script-line { color: var(--ink); }
 
 /* Soft mist behind the text so it stays legible over the trees */
 .invite .content::before {
   content: "";
   position: absolute;
-  inset: -12% -18% -12% 0;
+  inset: -12% 0;
+  /* Extend past the text on the right, but never past the edge of the screen */
+  right: calc(-1 * min(18%, max(16px, 50vw - 326px)));
   z-index: -1;
-  background: radial-gradient(closest-side, rgba(244, 244, 242, 0.88) 55%, rgba(244, 244, 242, 0));
+  background: radial-gradient(closest-side, rgba(244, 244, 242, 0.76) 50%, rgba(244, 244, 242, 0));
   pointer-events: none;
 }
 
@@ -242,6 +251,7 @@ h3 {
 }
 
 .venue-block p { margin-bottom: 0.6em; }
+.venue-block .dress { font-size: 0.8rem; margin-bottom: 1.2em; }
 
 .text-link {
   font-style: italic;
@@ -267,6 +277,11 @@ footer .twenty.small { font-size: 3.4rem; color: var(--ink); margin-bottom: 0.1e
   .invite { padding-top: 34vh; }
   /* Tall enough that the "y" loop rises above the names, so the lettering can tuck in beside the text */
   .invite { --tw-h: clamp(540px, 70vh, 620px); --tw-gutter: 100px; }
+  /* On phones the right-aligned line ends sit over the dark trees at the screen edge,
+     so center the mist further right; the screen edge hides where it's cut off */
+  .invite .content::before {
+    background: radial-gradient(ellipse 72% 56% at 68% 50%, rgba(244, 244, 242, 0.8) 55%, rgba(244, 244, 242, 0));
+  }
   .invite .twenty-art { left: calc(var(--tw-gutter) - var(--tw-w) * 0.64 - 4px); }
   .names { font-size: 1.5rem; letter-spacing: 0.12em; margin-right: -0.12em; white-space: nowrap; }
   .script-line { font-size: 1.1rem; letter-spacing: 0.08em; }

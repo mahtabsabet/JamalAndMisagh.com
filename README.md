@@ -4,9 +4,11 @@ Website for Misagh & Jamal's 20th Wedding Anniversary celebration — Dec 27–2
 
 Plain static site (no build step), hosted on GitHub Pages at <https://jamalandmisagh.com>.
 
-- `index.html` — invitation, itinerary, RSVP
+- `index.html` — public invite to the Dec 28 evening dinner & dance, RSVP
+- `family/index.html` — full Dec 27–29 invitation with itinerary (served at `/family`, not indexed by search engines)
 - `style.css` — styles
-- `images/og-preview.jpg` — link-preview thumbnail (WhatsApp, iMessage, etc.)
+- `images/og-preview-dec28.jpg` — link-preview thumbnail for the main page (WhatsApp, iMessage, etc.)
+- `images/og-preview.jpg` — link-preview thumbnail for `/family` (Dec 27–29)
 - `images/twenty.svg` — the hand-lettered "twenty", traced from the printed invitation
 - `CNAME` — custom domain for GitHub Pages (don't delete)
 
